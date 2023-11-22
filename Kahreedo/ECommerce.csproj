@@ -327,6 +327,7 @@
     <Content Include="Content\js\sequence.js" />
     <Content Include="Content\js\slick.js" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="DBScript\E-commerce Website Project  Script.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
