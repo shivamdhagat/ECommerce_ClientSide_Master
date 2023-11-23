@@ -1,0 +1,20 @@
+﻿@model string
+
+<div>
+    <div id="chat-window">
+       
+            @*<div>User: @message</div>*@
+            <div>Bot: @ViewBag.BotResponse</div>
+        </div>
+    </div>
+    <input type="text" id="user-input" />
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+    function sendMessage() {
+        var userMessage = $("#user-input").val();
+        // Use AJAX to send userMessage to LexController.SendMessage action
+        // Update chat window with Lex bot response
+    }
+</script>

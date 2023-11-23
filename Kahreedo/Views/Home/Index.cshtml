@@ -4,10 +4,14 @@
 }
 
 <!-- Start slider -->
+
 <section id="aa-slider">
     <div class="aa-slider-area">
         <div id="sequence" class="seq">
             <div class="seq-screen">
+
+
+
                 <ul class="seq-canvas">
 
                     <!-- single slide item -->
@@ -29,9 +33,11 @@
 
                 </ul>
             </div>
+       
             <!-- slider navigation btn -->
             <fieldset class="seq-nav" aria-controls="sequence" aria-label="Slider buttons">
                 <a type="button" href="" class="seq-prev" aria-label="Previous"><span class="fa fa-angle-left"></span></a>
+             
                 <a type="button" href="" class="seq-next" aria-label="Next"><span class="fa fa-angle-right"></span></a>
             </fieldset>
         </div>
@@ -52,6 +58,7 @@
                                     <img src="~/Content/img/promo-banner-womens.jpg" alt="img">
                                     <div class="aa-prom-content">
                                         <span>75% Off</span>
+                                      
                                         <h4><a href="@Url.Action("GetProductsByCategory", "Product", new { @categoryName = "Women" })">For Women</a></h4>
                                     </div>
                                 </div>
@@ -59,6 +66,7 @@
                         </div>
                         <!-- promo right -->
                         <div class="col-md-7 no-padding">
+                            @Html.Partial("_ChatBotPartial")
                             <div class="aa-promo-right">
                                 @foreach (var item in @ViewBag.PromoRight)
                                 {

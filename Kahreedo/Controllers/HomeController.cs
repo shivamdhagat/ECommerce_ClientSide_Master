@@ -1,4 +1,6 @@
-﻿using Khareedo.Models;
+﻿using Amazon.LexRuntimeV2;
+using Amazon.Runtime;
+using Khareedo.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +25,16 @@ namespace Khareedo.Controllers
             ViewBag.PromoRight = db.genPromoRights.ToList();
 
             this.GetDefaultData();
+
+            //fot lex
+           
+            //var awsCredentials = new Amazon.Runtime.BasicAWSCredentials("AKIAR5ZSWCZUOANO4IX3", "t+uNRuOQSgYAL7ggQ6x2GCHUzHui+5wVuDmBnePS");
+            //var lexConfig = new Amazon.LexRuntimeV2.AmazonLexRuntimeV2Config
+            //{
+            //    RegionEndpoint = Amazon.RegionEndpoint.USEast2 // Replace with your desired region
+            //};
+
+            //var lexClient = new Amazon.LexRuntimeV2.AmazonLexRuntimeV2Client(awsCredentials, lexConfig);
 
             return View();
         }      

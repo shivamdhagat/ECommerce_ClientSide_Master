@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Khareedo.Models;
 using System.Data;
+using Amazon.LexRuntimeV2;
+using Amazon.Runtime;
 
 namespace Khareedo.Controllers
 {
@@ -52,6 +54,19 @@ namespace Khareedo.Controllers
         {
             string usrName = formColl["UserName"];
             string Pass = formColl["Password"];
+
+            //fot lex
+           
+
+            var awsCredentials = new Amazon.Runtime.BasicAWSCredentials("AKIAR5ZSWCZUOANO4IX3", "t+uNRuOQSgYAL7ggQ6x2GCHUzHui+5wVuDmBnePS");
+            var lexConfig = new Amazon.LexRuntimeV2.AmazonLexRuntimeV2Config
+            {
+                RegionEndpoint = Amazon.RegionEndpoint.USEast1
+            };
+
+            var lexClient = new Amazon.LexRuntimeV2.AmazonLexRuntimeV2Client(awsCredentials, lexConfig);
+
+
 
             if (ModelState.IsValid)
             {
