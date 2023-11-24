@@ -36,20 +36,27 @@ namespace Khareedo.Controllers
         [HttpPost]
         public ActionResult SendMessage(string message)
         {
-            string sessionId = "userId123";
-            var request = new RecognizeTextRequest
+            if (message != null)
             {
-                BotId = "D61WKXISZ5",
-                BotAliasId = "OUNCNU6SSM",
-                LocaleId = "en_US",
-                SessionId= sessionId,
-            Text = message
-            };
+                string sessionId = "userId123";
+                var request = new RecognizeTextRequest
+                {
+                    BotId = "D61WKXISZ5",
+                    BotAliasId = "OUNCNU6SSM",
+                    LocaleId = "en_US",
+                    SessionId = sessionId,
+                    Text = message
+                };
 
-            var response = lexClient.RecognizeText(request);
-            var botMessage = response.Messages.FirstOrDefault()?.Content;
+                var response = lexClient.RecognizeText(request);
+                var botMessage = response.Messages.FirstOrDefault()?.Content;
 
-            return Json(botMessage);
+                return Json(botMessage);
+            }
+            else
+            {
+                return Json("");
+            }
         }
     }
 }
